@@ -6,16 +6,12 @@ import { useUserStore } from "@/pinia/stores/user"
 import ThemeSwitch from "@@/components/ThemeSwitch/index.vue"
 import { Key, Loading, Lock, Picture, User } from "@element-plus/icons-vue"
 import { getCaptchaApi, loginApi } from "./apis"
-import Owl from "./components/Owl.vue"
-import { useFocus } from "./composables/useFocus"
 
 const router = useRouter()
 
 const userStore = useUserStore()
 
 const settingsStore = useSettingsStore()
-
-const { isFocus, handleBlur, handleFocus } = useFocus()
 
 /** 登录表单元素的引用 */
 const loginFormRef = ref<FormInstance | null>(null)
@@ -86,7 +82,6 @@ createCode()
 <template>
   <div class="login-container">
     <ThemeSwitch v-if="settingsStore.showThemeSwitch" class="theme-switch" />
-    <Owl :close-eyes="isFocus" />
     <div class="login-card">
       <div class="title">
         <img src="@@/assets/images/layouts/logo-text-2.png">
@@ -112,8 +107,6 @@ createCode()
               :prefix-icon="Lock"
               size="large"
               show-password
-              @blur="handleBlur"
-              @focus="handleFocus"
             />
           </el-form-item>
           <el-form-item prop="code">
@@ -125,8 +118,6 @@ createCode()
               :prefix-icon="Key"
               maxlength="7"
               size="large"
-              @blur="handleBlur"
-              @focus="handleFocus"
             >
               <template #append>
                 <el-image :src="codeUrl" draggable="false" @click="createCode">
