@@ -1,5 +1,3 @@
-/// <reference types="vitest/config" />
-
 import { resolve } from "node:path"
 import vue from "@vitejs/plugin-vue"
 import vueJsx from "@vitejs/plugin-vue-jsx"
@@ -132,16 +130,6 @@ export default defineConfig(({ mode }) => {
         dts: "types/auto/components.d.ts",
         resolvers: [ElementPlusResolver()]
       })
-    ],
-    // Configuring Vitest: https://cn.vitest.dev/config
-    test: {
-      include: ["tests/**/*.test.{ts,js}"],
-      environment: "happy-dom",
-      server: {
-        deps: {
-          inline: ["element-plus"]
-        }
-      }
-    }
+    ]
   }
 })
