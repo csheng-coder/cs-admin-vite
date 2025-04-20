@@ -3,6 +3,7 @@ import type { CreateOrUpdateTableRequestData, TableData } from "@@/apis/tables/t
 import type { FormInstance, FormRules } from "element-plus"
 import { createTableDataApi, deleteTableDataApi, getTableDataApi, updateTableDataApi } from "@@/apis/tables"
 import { usePagination } from "@@/composables/usePagination"
+import { checkPermission } from "@@/utils/permission"
 import { CirclePlus, Delete, Download, Refresh, RefreshRight, Search } from "@element-plus/icons-vue"
 import { cloneDeep } from "lodash-es"
 
@@ -176,10 +177,10 @@ watch([() => paginationData.currentPage, () => paginationData.pageSize], getTabl
           <el-table-column prop="createTime" label="创建时间" align="center" />
           <el-table-column fixed="right" label="操作" width="150" align="center">
             <template #default="scope">
-              <el-button type="primary" text bg size="small" @click="handleUpdate(scope.row)">
+              <el-button v-if="checkPermission(['admin'])" type="primary" text bg size="small" @click="handleUpdate(scope.row)">
                 修改
               </el-button>
-              <el-button type="danger" text bg size="small" @click="handleDelete(scope.row)">
+              <el-button v-if="checkPermission(['admin'])" type="danger" text bg size="small" @click="handleDelete(scope.row)">
                 删除
               </el-button>
             </template>
