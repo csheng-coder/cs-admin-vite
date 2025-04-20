@@ -66,21 +66,13 @@ export const constantRoutes: RouteRecordRaw[] = [
   {
     path: "/demo",
     component: Layouts,
-    redirect: "/demo/unocss",
+    redirect: "/demo/element-plus",
     name: "Demo",
     meta: {
       title: "示例集合",
       elIcon: "DataBoard"
     },
     children: [
-      {
-        path: "unocss",
-        component: () => import("@/pages/demo/unocss/index.vue"),
-        name: "UnoCSS",
-        meta: {
-          title: "UnoCSS"
-        }
-      },
       {
         path: "element-plus",
         component: () => import("@/pages/demo/element-plus/index.vue"),
