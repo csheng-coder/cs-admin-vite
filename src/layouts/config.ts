@@ -25,10 +25,6 @@ export interface LayoutsConfig {
   showSearchMenu: boolean
   /** 是否缓存标签栏 */
   cacheTagsView: boolean
-  /** 是否显示灰色模式 */
-  showGreyMode: boolean
-  /** 是否显示色弱模式 */
-  showColorWeakness: boolean
 }
 
 /** 默认配置 */
@@ -43,9 +39,7 @@ const DEFAULT_CONFIG: LayoutsConfig = {
   showThemeSwitch: true,
   showScreenfull: true,
   showSearchMenu: true,
-  cacheTagsView: false,
-  showGreyMode: false,
-  showColorWeakness: false
+  cacheTagsView: false
 }
 
 /** 项目配置 */
