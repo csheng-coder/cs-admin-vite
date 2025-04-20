@@ -15,8 +15,6 @@ export interface LayoutsConfig {
   fixedHeader: boolean
   /** 是否显示页脚 */
   showFooter: boolean
-  /** 是否显示切换主题按钮 */
-  showThemeSwitch: boolean
   /** 是否显示全屏按钮 */
   showScreenfull: boolean
   /** 是否显示搜索按钮 */
@@ -33,7 +31,6 @@ const DEFAULT_CONFIG: LayoutsConfig = {
   fixedHeader: true,
   showFooter: true,
   showLogo: true,
-  showThemeSwitch: true,
   showScreenfull: true,
   showSearchMenu: true,
   cacheTagsView: false

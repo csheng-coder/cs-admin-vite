@@ -2,7 +2,6 @@
 
 import type { LayoutsConfig } from "@/layouts/config"
 import type { TagView } from "@/pinia/stores/tags-view"
-import type { ThemeName } from "@@/composables/useTheme"
 import type { SidebarClosed, SidebarOpened } from "@@/constants/app-key"
 import { CacheKey } from "@@/constants/cache-key"
 
@@ -25,15 +24,6 @@ export function getSidebarStatus() {
 }
 export function setSidebarStatus(sidebarStatus: SidebarOpened | SidebarClosed) {
   localStorage.setItem(CacheKey.SIDEBAR_STATUS, sidebarStatus)
-}
-// #endregion
-
-// #region 正在应用的主题名称
-export function getActiveThemeName() {
-  return localStorage.getItem(CacheKey.ACTIVE_THEME_NAME) as ThemeName | null
-}
-export function setActiveThemeName(themeName: ThemeName) {
-  localStorage.setItem(CacheKey.ACTIVE_THEME_NAME, themeName)
 }
 // #endregion
 

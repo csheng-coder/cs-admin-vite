@@ -1,9 +1,7 @@
 <script lang="ts" setup>
 import type { FormInstance, FormRules } from "element-plus"
 import type { LoginRequestData } from "./apis/type"
-import { useSettingsStore } from "@/pinia/stores/settings"
 import { useUserStore } from "@/pinia/stores/user"
-import ThemeSwitch from "@@/components/ThemeSwitch/index.vue"
 import { CacheKey } from "@@/constants/cache-key"
 import { Key, Loading, Lock, Picture, User } from "@element-plus/icons-vue"
 import Cookies from "js-cookie"
@@ -12,8 +10,6 @@ import { getCaptchaApi, loginApi } from "./apis"
 const router = useRouter()
 
 const userStore = useUserStore()
-
-const settingsStore = useSettingsStore()
 
 /** 登录表单元素的引用 */
 const loginFormRef = ref<FormInstance | null>(null)
@@ -119,7 +115,6 @@ loadCredentials()
 
 <template>
   <div class="login-container">
-    <ThemeSwitch v-if="settingsStore.showThemeSwitch" class="theme-switch" />
     <div class="login-card">
       <div class="title">
         <img src="@@/assets/images/layouts/logo-text-2.png">
@@ -195,12 +190,6 @@ loadCredentials()
   align-items: center;
   width: 100%;
   min-height: 100%;
-  .theme-switch {
-    position: fixed;
-    top: 5%;
-    right: 5%;
-    cursor: pointer;
-  }
   .login-card {
     width: 480px;
     max-width: 90%;
