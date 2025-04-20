@@ -3,16 +3,13 @@ import { getLayoutsConfig } from "@@/utils/cache/local-storage"
 
 /** 项目配置类型 */
 export interface LayoutsConfig {
-  /** 是否显示设置按钮和面板 */
-  showSettings: boolean
   /** 布局模式 */
   layoutMode: LayoutModeEnum
 }
 
 /** 默认配置 */
 const DEFAULT_CONFIG: LayoutsConfig = {
-  layoutMode: LayoutModeEnum.Left,
-  showSettings: true
+  layoutMode: LayoutModeEnum.Left
 }
 
 /** 项目配置 */

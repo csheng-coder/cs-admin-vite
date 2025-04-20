@@ -6,9 +6,7 @@ export enum DeviceEnum {
 
 /** 布局模式 */
 export enum LayoutModeEnum {
-  Left = "left",
-  Top = "top",
-  LeftTop = "left-top"
+  Left = "left"
 }
 
 /** 侧边栏打开状态常量 */
