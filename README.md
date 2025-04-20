@@ -100,6 +100,10 @@ pnpm lint
 
 </details>
 
+## 与 V3 Admin Vite 同步进度
+
+![progress](./src/common/assets/images/docs/progress.png)
+
 ## License
 
 [MIT](./LICENSE) License © 2025-PRESENT [csheng-coder](https://github.com/csheng-coder)
