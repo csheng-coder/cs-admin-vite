@@ -7,15 +7,12 @@ export interface LayoutsConfig {
   showSettings: boolean
   /** 布局模式 */
   layoutMode: LayoutModeEnum
-  /** 是否缓存标签栏 */
-  cacheTagsView: boolean
 }
 
 /** 默认配置 */
 const DEFAULT_CONFIG: LayoutsConfig = {
   layoutMode: LayoutModeEnum.Left,
-  showSettings: true,
-  cacheTagsView: false
+  showSettings: true
 }
 
 /** 项目配置 */

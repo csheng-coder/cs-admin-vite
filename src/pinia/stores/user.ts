@@ -3,7 +3,6 @@ import { resetRouter } from "@/router"
 import { routerConfig } from "@/router/config"
 import { getCurrentUserApi } from "@@/apis/users"
 import { setToken as _setToken, getToken, removeToken } from "@@/utils/cache/cookies"
-import { useSettingsStore } from "./settings"
 import { useTagsViewStore } from "./tags-view"
 
 export const useUserStore = defineStore("user", () => {
@@ -12,7 +11,6 @@ export const useUserStore = defineStore("user", () => {
   const username = ref<string>("")
 
   const tagsViewStore = useTagsViewStore()
-  const settingsStore = useSettingsStore()
 
   // 设置 Token
   const setToken = (value: string) => {
@@ -55,10 +53,8 @@ export const useUserStore = defineStore("user", () => {
 
   // 重置 Visited Views 和 Cached Views
   const resetTagsView = () => {
-    if (!settingsStore.cacheTagsView) {
-      tagsViewStore.delAllVisitedViews()
-      tagsViewStore.delAllCachedViews()
-    }
+    tagsViewStore.delAllVisitedViews()
+    tagsViewStore.delAllCachedViews()
   }
 
   return { token, roles, username, setToken, getInfo, changeRoles, logout, resetToken }
