@@ -7,18 +7,6 @@ export interface LayoutsConfig {
   showSettings: boolean
   /** 布局模式 */
   layoutMode: LayoutModeEnum
-  /** 是否显示标签栏 */
-  showTagsView: boolean
-  /** 是否显示 Logo */
-  showLogo: boolean
-  /** 是否固定 Header */
-  fixedHeader: boolean
-  /** 是否显示页脚 */
-  showFooter: boolean
-  /** 是否显示全屏按钮 */
-  showScreenfull: boolean
-  /** 是否显示搜索按钮 */
-  showSearchMenu: boolean
   /** 是否缓存标签栏 */
   cacheTagsView: boolean
 }
@@ -27,12 +15,6 @@ export interface LayoutsConfig {
 const DEFAULT_CONFIG: LayoutsConfig = {
   layoutMode: LayoutModeEnum.Left,
   showSettings: true,
-  showTagsView: true,
-  fixedHeader: true,
-  showFooter: true,
-  showLogo: true,
-  showScreenfull: true,
-  showSearchMenu: true,
   cacheTagsView: false
 }
 

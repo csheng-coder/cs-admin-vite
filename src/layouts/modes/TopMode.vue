@@ -1,9 +1,5 @@
 <script lang="ts" setup>
-import { useSettingsStore } from "@/pinia/stores/settings"
 import { AppMain, Logo, NavigationBar, TagsView } from "../components"
-
-const settingsStore = useSettingsStore()
-const { showTagsView, showLogo } = storeToRefs(settingsStore)
 </script>
 
 <template>
@@ -11,13 +7,13 @@ const { showTagsView, showLogo } = storeToRefs(settingsStore)
     <!-- 头部导航栏和标签栏 -->
     <div class="fixed-header layout-header">
       <div class="content">
-        <Logo v-if="showLogo" :collapse="false" class="logo" />
+        <Logo :collapse="false" class="logo" />
         <NavigationBar class="navigation-bar" />
       </div>
-      <TagsView v-show="showTagsView" />
+      <TagsView />
     </div>
     <!-- 主容器 -->
-    <div :class="{ hasTagsView: showTagsView }" class="main-container">
+    <div class="hasTagsView main-container">
       <!-- 页面主体内容 -->
       <AppMain class="app-main" />
     </div>

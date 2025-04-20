@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { useAppStore } from "@/pinia/stores/app"
 import { usePermissionStore } from "@/pinia/stores/permission"
-import { useSettingsStore } from "@/pinia/stores/settings"
 import { useDevice } from "@@/composables/useDevice"
 import { useLayoutMode } from "@@/composables/useLayoutMode"
 import { getCssVar } from "@@/utils/css"
@@ -17,12 +16,11 @@ const { isLeft, isTop } = useLayoutMode()
 const route = useRoute()
 const appStore = useAppStore()
 const permissionStore = usePermissionStore()
-const settingsStore = useSettingsStore()
 
 const activeMenu = computed(() => route.meta.activeMenu || route.path)
 const noHiddenRoutes = computed(() => permissionStore.routes.filter(item => !item.meta?.hidden))
 const isCollapse = computed(() => !appStore.sidebar.opened)
-const isLogo = computed(() => isLeft.value && settingsStore.showLogo)
+const isLogo = computed(() => isLeft.value)
 const backgroundColor = computed(() => (isLeft.value ? v3SidebarMenuBgColor : undefined))
 const textColor = computed(() => (isLeft.value ? v3SidebarMenuTextColor : undefined))
 const activeTextColor = computed(() => (isLeft.value ? v3SidebarMenuActiveTextColor : undefined))

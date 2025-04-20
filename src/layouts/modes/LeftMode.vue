@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { useAppStore } from "@/pinia/stores/app"
-import { useSettingsStore } from "@/pinia/stores/settings"
 import { useDevice } from "@@/composables/useDevice"
 import { useLayoutMode } from "@@/composables/useLayoutMode"
 import { AppMain, NavigationBar, Sidebar, TagsView } from "../components"
@@ -8,8 +7,6 @@ import { AppMain, NavigationBar, Sidebar, TagsView } from "../components"
 const { isMobile } = useDevice()
 const { isLeft } = useLayoutMode()
 const appStore = useAppStore()
-const settingsStore = useSettingsStore()
-const { showTagsView, fixedHeader } = storeToRefs(settingsStore)
 
 /** 定义计算属性 layoutClasses，用于控制布局的类名 */
 const layoutClasses = computed(() => {
@@ -35,11 +32,11 @@ function handleClickOutside() {
     <!-- 左侧边栏 -->
     <Sidebar class="sidebar-container" />
     <!-- 主容器 -->
-    <div :class="{ hasTagsView: showTagsView }" class="main-container">
+    <div class="hasTagsView main-container">
       <!-- 头部导航栏和标签栏 -->
-      <div :class="{ 'fixed-header': fixedHeader }" class="layout-header">
+      <div class="fixed-header layout-header">
         <NavigationBar />
-        <TagsView v-show="showTagsView" />
+        <TagsView />
       </div>
       <!-- 页面主体内容 -->
       <AppMain class="app-main" />

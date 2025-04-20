@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import type { ElScrollbar } from "element-plus"
 import type { RouterLink } from "vue-router"
-import { useSettingsStore } from "@/pinia/stores/settings"
 import Screenfull from "@@/components/Screenfull/index.vue"
 import { useRouteListener } from "@@/composables/useRouteListener"
 import { ArrowLeft, ArrowRight } from "@element-plus/icons-vue"
@@ -13,8 +12,6 @@ interface Props {
 const props = defineProps<Props>()
 
 const route = useRoute()
-
-const settingsStore = useSettingsStore()
 
 const { listenerRouteChange } = useRouteListener()
 
@@ -121,7 +118,7 @@ listenerRouteChange(() => {
         <ArrowRight />
       </el-icon>
     </el-tooltip>
-    <Screenfull v-if="settingsStore.showScreenfull" :content="true" class="screenfull" />
+    <Screenfull :content="true" class="screenfull" />
   </div>
 </template>
 

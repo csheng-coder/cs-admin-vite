@@ -1,40 +1,20 @@
 <script lang="ts" setup>
 import { useSettingsStore } from "@/pinia/stores/settings"
-import { useLayoutMode } from "@@/composables/useLayoutMode"
 import { removeLayoutsConfig } from "@@/utils/cache/local-storage"
 import { Refresh } from "@element-plus/icons-vue"
 import SelectLayoutMode from "./SelectLayoutMode.vue"
-
-const { isLeft } = useLayoutMode()
 
 const settingsStore = useSettingsStore()
 
 // 使用 storeToRefs 将提取的属性保持其响应性
 const {
-  showTagsView,
-  showLogo,
-  fixedHeader,
-  showFooter,
-  showScreenfull,
-  showSearchMenu,
   cacheTagsView
 } = storeToRefs(settingsStore)
 
 /** 定义 switch 设置项 */
 const switchSettings = {
-  "显示标签栏": showTagsView,
-  "显示 Logo": showLogo,
-  "固定 Header": fixedHeader,
-  "显示页脚": showFooter,
-  "显示全屏按钮": showScreenfull,
-  "显示搜索按钮": showSearchMenu,
-  "是否缓存标签栏": cacheTagsView
+  是否缓存标签栏: cacheTagsView
 }
-
-// 非左侧模式时，Header 都是 fixed 布局
-watchEffect(() => {
-  !isLeft.value && (fixedHeader.value = true)
-})
 
 /** 重置项目配置 */
 function resetLayoutsConfig() {
@@ -51,7 +31,7 @@ function resetLayoutsConfig() {
     <h4>功能配置</h4>
     <div v-for="(settingValue, settingName, index) in switchSettings" :key="index" class="setting-item">
       <span class="setting-name">{{ settingName }}</span>
-      <el-switch v-model="settingValue.value" :disabled="!isLeft && settingName === '固定 Header'" />
+      <el-switch v-model="settingValue.value" />
     </div>
     <el-button type="danger" :icon="Refresh" @click="resetLayoutsConfig">
       重 置
