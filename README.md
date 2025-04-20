@@ -1,227 +1,105 @@
 <div align="center">
   <img alt="logo" width="120" height="120" src="./src/common/assets/images/layouts/logo.png">
-  <h1>V3 Admin Vite</h1>
+  <h1>CS Admin Vite</h1>
 </div>
 
-[![github release](https://img.shields.io/github/v/release/un-pany/v3-admin-vite?style=flat)](https://github.com/un-pany/v3-admin-vite/releases)
-[![github stars](https://img.shields.io/github/stars/un-pany/v3-admin-vite?style=flat)](https://github.com/un-pany/v3-admin-vite/stargazers)
-[![gitee stars](https://gitee.com/un-pany/v3-admin-vite/badge/star.svg)](https://gitee.com/un-pany/v3-admin-vite/stargazers)
+## 简介
 
-<b>English | <a href="./README.zh-CN.md">中文</a></b>
+CS Admin Vite 是一个精心制作的后台管理系统模板，基于 Vue3、Vite、TypeScript、Element Plus 等主流技术。
 
-## Introduction
-
-V3 Admin Vite is a well-crafted backend management system template, built with popular technologies such as Vue3, Vite, TypeScript, and Element Plus
-
-## Notifications
-
-> [!NOTE]
-> Powered by love! All source code is free and open-source. If you find it helpful, feel free to give a star to support!
-
-> [!IMPORTANT]
-> Welcome to experience the brand-new version 5.0, currently in the beta stage. It will be a masterpiece!
-
-> [!WARNING]
-> Version 4.x will no longer be maintained unless there are critical bugs! [Click to switch to the 4.x branch](https://github.com/un-pany/v3-admin-vite/tree/4.x)
-
-> [!TIP]
-> Paid services are officially launched! If you don’t want to do it yourself but want to remove TS or other modules, try the lazy package! [Click to check it out](https://github.com/un-pany/v3-admin-vite/issues/225)
-
-> [!TIP]
-> If you have mobile web app needs, try the new open-source template. [MobVue](https://github.com/un-pany/mobvue)
-
-## Usage
+## 使用
 
 <details>
-<summary>Recommended Environment</summary>
+<summary>推荐环境</summary>
 
 <br>
 
-- Latest version of `Visual Studio Code`
-- Install the recommended plugins in the `.vscode/extensions.json` file
-- `node` 20.x or 22+
-- `pnpm` 9.x or 10+
+- `node` 20.x 或 22+
+- `pnpm` 9.x 或 10+
 
 </details>
 
 <details>
-<summary>Local Development</summary>
+<summary>本地开发</summary>
 
 <br>
 
 ```bash
-# Clone the project
-git clone https://github.com/un-pany/v3-admin-vite.git
-
-# Enter the project directory
-cd v3-admin-vite
-
-# Install dependencies
+# 安装依赖
 pnpm i
 
-# Start the development server
+# 启动服务
 pnpm dev
 ```
 
 </details>
 
 <details>
-<summary>Build</summary>
+<summary>打包构建</summary>
 
 <br>
 
 ```bash
-# Build for the staging environment
+# 打包构建预发布环境
 pnpm build:staging
 
-# Build for the production environment
+# 打包构建生产环境
 pnpm build
 ```
 
 </details>
 
 <details>
-<summary>Local Preview</summary>
+<summary>本地预览</summary>
 
 <br>
 
 ```bash
-# Execute the build command first to generate the dist directory, then run the preview command
+# 先执行打包构建命令生成 dist 目录后再执行以下预览命令
 pnpm preview
 ```
 
 </details>
 
 <details>
-<summary>Code Check</summary>
+<summary>代码检查</summary>
 
 <br>
 
 ```bash
-# Code linting and formatting
+# 代码校验与格式化
 pnpm lint
-
-# Unit tests
-pnpm test
 ```
 
 </details>
 
 <details>
-<summary>Commit Guidelines</summary>
+<summary>代码提交规范</summary>
 
 <br>
 
-`feat` New feature
+`feat` 新功能
 
-`fix` Bug fix
+`fix` 修复错误
 
-`perf` Performance improvement
+`perf` 性能优化
 
-`refactor` Code refactoring
+`refactor` 重构代码
 
-`docs` Documentation and comments
+`docs` 文档和注释
 
-`types` Type-related changes
+`types` 类型相关
 
-`test` Unit tests related
+`test` 单测相关
 
-`ci` Continuous integration, workflows
+`ci` 持续集成、工作流
 
-`revert` Revert changes
+`revert` 撤销更改
 
-`chore` Chores (update dependencies, modify configurations, etc)
+`chore` 琐事（更新依赖、修改配置等）
 
 </details>
 
-## Links
-
-**Online Preview**: [github-pages](https://un-pany.github.io/v3-admin-vite)
-
-**Chinese Documentation**: [link](https://juejin.cn/post/7089377403717287972)
-
-**Zero to Hero Tutorial**: [link](https://juejin.cn/column/7207659644487139387)
-
-**Mobile Web App**: [mobvue](https://github.com/un-pany/mobvue)
-
-**Electron Desktop Version**: [v3-electron-vite](https://github.com/un-pany/v3-electron-vite)
-
-**Chinese Repository**: [gitee](https://gitee.com/un-pany/v3-admin-vite)
-
-**Optional Group**: [check how to join](https://github.com/un-pany/v3-admin-vite/issues/191)
-
-**Donations**: [buy a coffee for the author](https://github.com/un-pany/v3-admin-vite/issues/69)
-
-**Releases & Changelog**: [releases](https://github.com/un-pany/v3-admin-vite/releases)
-
-## Features
-
-**Simplified structure**: No complex encapsulation, no complicated type gymnastics, just enough to meet the needs
-
-**Detailed comments**: Every configuration item comes with as detailed comments as possible
-
-**Latest dependencies**: Keeps all third-party dependencies up to date
-
-**Consistency**: Unified code style, naming conventions, and comment style
-
-## Built-in Features
-
-**User Management**: Login, logout demonstration
-
-**Permission Management**: Page-level permissions (dynamic routing), button-level permissions (permission directives, permission functions), route guards
-
-**Multiple Environments**: Development, staging, and production environments
-
-**Multiple Themes**: Normal, dark, and deep blue themes
-
-**Multiple Layouts**: Left-side, top, and hybrid layouts
-
-**Homepage**: Different dashboard pages for different users
-
-**Error Pages**: 403, 404
-
-**Mobile Compatibility**: Layouts compatible with mobile screen resolutions
-
-**Others**: SVG sprite sheet, dynamic sidebar, dynamic breadcrumbs, tab navigation, content zoom and fullscreen, composable functions
-
-## Tech Stack
-
-**Vue3**: Vue3 + script setup with the latest Vue3 Composition API
-
-**Element Plus**: The Vue3 version of Element UI
-
-**Pinia**: The legendary Vuex5
-
-**Vite**: Really fast
-
-**Vue Router**: The routing system
-
-**TypeScript**: A superset of JavaScript
-
-**pnpm**: A faster, disk-space-saving package manager
-
-**Scss**: Consistent with Element Plus
-
-**CSS Variables**: Primarily controls layout and color in the project
-
-**ESLint**: Code linting and formatting
-
-**Axios**: Sends network requests
-
-**UnoCSS**: A high-performance, flexible atomic CSS engine
-
-## Project Preview Image
-
-![preview](./src/common/assets/images/docs/preview.png)
-
-## Contributors
-
-A big thank you to all the contributors!
-
-<a href="https://github.com/un-pany/v3-admin-vite/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=un-pany/v3-admin-vite">
-</a>
-
 ## License
 
-[MIT](./LICENSE) License © 2022-PRESENT [pany](https://github.com/pany-ang)
+[MIT](./LICENSE) License © 2025-PRESENT [csheng-coder](https://github.com/csheng-coder)

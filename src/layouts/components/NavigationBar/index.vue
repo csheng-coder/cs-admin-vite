@@ -53,7 +53,7 @@ function logout() {
         </div>
         <template #dropdown>
           <el-dropdown-menu>
-            <a target="_blank" href="https://github.com/un-pany/v3-admin-vite">
+            <a target="_blank" href="https://github.com/csheng-coder/cs-admin-vite">
               <el-dropdown-item>GitHub</el-dropdown-item>
             </a>
             <a target="_blank" href="https://gitee.com/un-pany/v3-admin-vite">
