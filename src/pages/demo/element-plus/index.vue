@@ -110,14 +110,14 @@ watch([() => paginationData.currentPage, () => paginationData.pageSize], getTabl
 </script>
 
 <template>
-  <div class="app-container">
-    <el-card v-loading="loading" shadow="never" class="search-wrapper">
+  <div class="app-container" v-loading="loading">
+    <el-card shadow="never" class="search-wrapper">
       <el-form ref="searchFormRef" :inline="true" :model="searchData">
         <el-form-item prop="username" label="用户名">
-          <el-input v-model="searchData.username" placeholder="请输入" />
+          <el-input v-model.trim="searchData.username" placeholder="请输入" />
         </el-form-item>
         <el-form-item prop="phone" label="手机号">
-          <el-input v-model="searchData.phone" placeholder="请输入" />
+          <el-input v-model.trim="searchData.phone" placeholder="请输入" />
         </el-form-item>
         <el-form-item>
           <el-button type="primary" :icon="Search" @click="handleSearch">
@@ -129,7 +129,8 @@ watch([() => paginationData.currentPage, () => paginationData.pageSize], getTabl
         </el-form-item>
       </el-form>
     </el-card>
-    <el-card v-loading="loading" shadow="never">
+
+    <el-card shadow="never">
       <div class="toolbar-wrapper">
         <div>
           <el-button type="primary" :icon="CirclePlus" @click="dialogVisible = true">
@@ -149,7 +150,7 @@ watch([() => paginationData.currentPage, () => paginationData.pageSize], getTabl
         </div>
       </div>
       <div class="table-wrapper">
-        <el-table :data="tableData">
+        <el-table :data="tableData" :header-cell-style="{ background: '#f5f7fa', color: '#606266' }">
           <el-table-column type="selection" width="50" align="center" />
           <el-table-column prop="username" label="用户名" align="center" />
           <el-table-column prop="roles" label="角色" align="center">
@@ -200,19 +201,21 @@ watch([() => paginationData.currentPage, () => paginationData.pageSize], getTabl
         />
       </div>
     </el-card>
+
     <!-- 新增/修改 -->
     <el-dialog
       v-model="dialogVisible"
       :title="formData.id === undefined ? '新增用户' : '修改用户'"
       width="30%"
+      align-center
       @closed="resetForm"
     >
-      <el-form ref="formRef" :model="formData" :rules="formRules" label-width="100px" label-position="left">
-        <el-form-item prop="username" label="用户名">
-          <el-input v-model="formData.username" placeholder="请输入" />
+      <el-form ref="formRef" :model="formData" :rules="formRules" label-width="auto" label-position="right">
+        <el-form-item label="用户名" prop="username">
+          <el-input v-model.trim="formData.username" placeholder="请输入" />
         </el-form-item>
-        <el-form-item v-if="formData.id === undefined" prop="password" label="密码">
-          <el-input v-model="formData.password" placeholder="请输入" />
+        <el-form-item v-if="formData.id === undefined" label="密码" prop="password">
+          <el-input v-model.trim="formData.password" placeholder="请输入" />
         </el-form-item>
       </el-form>
       <template #footer>
@@ -226,31 +229,3 @@ watch([() => paginationData.currentPage, () => paginationData.pageSize], getTabl
     </el-dialog>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.el-alert {
-  margin-bottom: 20px;
-}
-
-.search-wrapper {
-  margin-bottom: 20px;
-  :deep(.el-card__body) {
-    padding-bottom: 2px;
-  }
-}
-
-.toolbar-wrapper {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.table-wrapper {
-  margin-bottom: 20px;
-}
-
-.pager-wrapper {
-  display: flex;
-  justify-content: flex-end;
-}
-</style>

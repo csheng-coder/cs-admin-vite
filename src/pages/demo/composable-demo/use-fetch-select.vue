@@ -9,10 +9,7 @@ const { loading, options, value } = useFetchSelect({
 
 <template>
   <div class="app-container">
-    <el-card shadow="never">
-      该示例是演示：通过 composable 自动调用 api 后拿到 Select 组件需要的数据并传递给 Select 组件
-    </el-card>
-    <el-card header="Select 示例" shadow="never" v-loading="loading">
+    <el-card mb-20px header="Select 示例" shadow="never" v-loading="loading">
       <el-select v-model="value" filterable>
         <el-option v-for="(item, index) in options" v-bind="item" :key="index" placeholder="请选择" />
       </el-select>
@@ -24,7 +21,4 @@ const { loading, options, value } = useFetchSelect({
 </template>
 
 <style lang="scss" scoped>
-.el-card {
-  margin-bottom: 20px;
-}
 </style>

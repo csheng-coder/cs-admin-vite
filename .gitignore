@@ -16,3 +16,6 @@ vite.config.*.timestamp*
 # Use the pnpm
 package-lock.json
 yarn.lock
+
+# 忽略自动生成的types文件
+types/auto/

@@ -50,9 +50,6 @@ importers:
       vue-router:
         specifier: 4.5.0
         version: 4.5.0(vue@3.5.13(typescript@5.8.3))
-      vxe-table:
-        specifier: 4.6.25
-        version: 4.6.25(vue@3.5.13(typescript@5.8.3))
     devDependencies:
       '@antfu/eslint-config':
         specifier: 4.12.0
@@ -90,9 +87,6 @@ importers:
       js-cookie:
         specifier: 3.0.5
         version: 3.0.5
-      jsencrypt:
-        specifier: 3.3.2
-        version: 3.3.2
       lint-staged:
         specifier: 15.5.1
         version: 15.5.1
@@ -1580,9 +1574,6 @@ packages:
   dom-serializer@2.0.0:
     resolution: {integrity: sha512-wIkAryiqt/nV5EQKqQpo3SToSOV9J0DnbJqwK7Wv/Trc92zIAYZ4FlMu+JPFW1DfGFt81ZTCGgDEabffXeLyJg==}
 
-  dom-zindex@1.0.6:
-    resolution: {integrity: sha512-FKWIhiU96bi3xpP9ewRMgANsoVmMUBnMnmpCT6dPMZOunVYJQmJhSRruoI0XSPoHeIif3kyEuiHbFrOJwEJaEA==}
-
   domelementtype@2.3.0:
     resolution: {integrity: sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==}
 
@@ -2201,9 +2192,6 @@ packages:
   jsdoc-type-pratt-parser@4.1.0:
     resolution: {integrity: sha512-Hicd6JK5Njt2QB6XYFS7ok9e37O8AYk3jTcppG4YVQnYjOemymvTcmc7OWsmq/Qqj5TdRFO5/x/tIPmBeRtGHg==}
     engines: {node: '>=12.0.0'}
-
-  jsencrypt@3.3.2:
-    resolution: {integrity: sha512-arQR1R1ESGdAxY7ZheWr12wCaF2yF47v5qpB76TtV64H1pyGudk9Hvw8Y9tb/FiTIaaTRUyaSnm5T/Y53Ghm/A==}
 
   jsesc@3.0.2:
     resolution: {integrity: sha512-xKqzzWXDttJuOcawBt4KnKHHIf5oQ/Cxax+0PWFG+DFDgHNAdi+TXECADI+RYiFUMmx8792xsMbbgXj4CwnP4g==}
@@ -3227,11 +3215,6 @@ packages:
       typescript:
         optional: true
 
-  vxe-table@4.6.25:
-    resolution: {integrity: sha512-rFhGh8w+420cdnIasQKisiKagz9F/iNieB/z6v0j4GcsMfGHEmSJ72YrHcXogQh4wNlCzKVfb7rl7nREL5eIOg==}
-    peerDependencies:
-      vue: ^3.2.28
-
   webpack-virtual-modules@0.6.2:
     resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
 
@@ -3262,9 +3245,6 @@ packages:
 
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
-
-  xe-utils@3.7.4:
-    resolution: {integrity: sha512-9yuCHLOU+og4OEkPWWtzrYk1Zt1hgN66U/NCJ0+vYJSx1MplBtoQRz8aEA+2RmCr3leLru98vQxNpw/vJsu/sg==}
 
   xml-name-validator@4.0.0:
     resolution: {integrity: sha512-ICP2e+jsHvAj2E2lIHxa5tjXRlKDJo4IdvPvCXbXQGdzSfmSpNVyIKMvoZHjDY9DP0zV17iI85o90vRFXNccRw==}
@@ -4782,8 +4762,6 @@ snapshots:
       domhandler: 5.0.3
       entities: 4.5.0
 
-  dom-zindex@1.0.6: {}
-
   domelementtype@2.3.0: {}
 
   domhandler@4.3.1:
@@ -5475,8 +5453,6 @@ snapshots:
       argparse: 2.0.1
 
   jsdoc-type-pratt-parser@4.1.0: {}
-
-  jsencrypt@3.3.2: {}
 
   jsesc@3.0.2: {}
 
@@ -6719,12 +6695,6 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.3
 
-  vxe-table@4.6.25(vue@3.5.13(typescript@5.8.3)):
-    dependencies:
-      dom-zindex: 1.0.6
-      vue: 3.5.13(typescript@5.8.3)
-      xe-utils: 3.7.4
-
   webpack-virtual-modules@0.6.2: {}
 
   which@2.0.2:
@@ -6766,8 +6736,6 @@ snapshots:
       strip-ansi: 7.1.0
 
   wrappy@1.0.2: {}
-
-  xe-utils@3.7.4: {}
 
   xml-name-validator@4.0.0: {}
 
